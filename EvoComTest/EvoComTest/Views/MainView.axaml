@@ -1,0 +1,21 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:EvoComTest.ViewModels"
+             xmlns:views="clr-namespace:EvoComTest.Views"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="EvoComTest.Views.MainView"
+             x:DataType="viewModels:MainViewModel">
+    <Design.DataContext>
+        <viewModels:MainViewModel />
+    </Design.DataContext>
+
+    <DockPanel LastChildFill="True">
+
+        <views:MenuView DockPanel.Dock="Left" />
+        <views:TitleView DockPanel.Dock="Top" />
+
+        <TransitioningContentControl Content="{Binding CurrentPage}" />
+    </DockPanel>
+</UserControl>

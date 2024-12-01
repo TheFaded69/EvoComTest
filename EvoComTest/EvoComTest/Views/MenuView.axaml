@@ -1,0 +1,61 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:EvoComTest.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="EvoComTest.Views.MenuView"
+             xmlns:evoComTest="clr-namespace:EvoComTest"
+             x:DataType="viewModels:MenuViewModel"
+             xmlns:ic="using:FluentIcons.Avalonia"
+             xmlns:converters="clr-namespace:EvoComTest.Views.Converters"
+             xmlns:items="clr-namespace:EvoComTest.ViewModels.Items">
+    <Design.DataContext>
+        <viewModels:MenuViewModel />
+    </Design.DataContext>
+    
+    <Border CornerRadius="5"
+            Background="#a5d8ff"
+            BorderBrush="Black"
+            BorderThickness="2">
+        <SplitView IsPaneOpen="{Binding IsMenuOpen}"
+                   OpenPaneLength="300"
+                   DisplayMode="CompactInline"
+                   CompactPaneLength="38"
+                   PaneBackground="#a5d8ff">
+            <SplitView.Pane>
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Button Command="{Binding TriggerMenuCommand}"
+                                HorizontalAlignment="Left">
+                            <ic:SymbolIcon Symbol="LineHorizontal3"/>
+                        </Button>
+                        
+                        <TextBlock Text="Меню"
+                                   VerticalAlignment="Center"
+                                   Margin="5"/>
+                    </StackPanel>
+                    
+                    <ListBox ItemsSource="{Binding MenuItems}"
+                             SelectedItem="{Binding SelectedMenuItem}">
+                        <ListBox.Styles>
+                            <Style Selector="ListBoxItem">
+                                <Setter Property="Background" Value="#a5d8ff"></Setter>
+                            </Style>
+                        </ListBox.Styles>
+                        <ListBox.ItemTemplate>
+                            <DataTemplate DataType="{x:Type items:MenuItemViewModel}">
+                                <StackPanel Spacing="10" Orientation="Horizontal">
+                                    <ic:SymbolIcon Symbol="{Binding IconKey, Converter={converters:IconConverter}}"/>
+                                     <TextBlock Text="{Binding Label}" 
+                                                VerticalAlignment="Center"/> 
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    
+                </StackPanel>
+            </SplitView.Pane>
+        </SplitView>
+    </Border>
+</UserControl>

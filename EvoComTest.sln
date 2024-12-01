@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvoComTest", "EvoComTest\EvoComTest\EvoComTest.csproj", "{AC2C8141-60B4-4C19-9AFE-3B673CA7260B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvoComTest.Desktop", "EvoComTest\EvoComTest.Desktop\EvoComTest.Desktop.csproj", "{ADE00681-9C0E-4ABC-84A2-F382728B667E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvoComTest.Browser", "EvoComTest\EvoComTest.Browser\EvoComTest.Browser.csproj", "{73095CB8-A532-462E-B4AC-B67419AA9B77}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AC2C8141-60B4-4C19-9AFE-3B673CA7260B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC2C8141-60B4-4C19-9AFE-3B673CA7260B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC2C8141-60B4-4C19-9AFE-3B673CA7260B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC2C8141-60B4-4C19-9AFE-3B673CA7260B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADE00681-9C0E-4ABC-84A2-F382728B667E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADE00681-9C0E-4ABC-84A2-F382728B667E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADE00681-9C0E-4ABC-84A2-F382728B667E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADE00681-9C0E-4ABC-84A2-F382728B667E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73095CB8-A532-462E-B4AC-B67419AA9B77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73095CB8-A532-462E-B4AC-B67419AA9B77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73095CB8-A532-462E-B4AC-B67419AA9B77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73095CB8-A532-462E-B4AC-B67419AA9B77}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

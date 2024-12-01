@@ -1,0 +1,61 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:contentPage="clr-namespace:EvoComTest.ViewModels.ContentPage"
+             xmlns:items="clr-namespace:EvoComTest.ViewModels.Items"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="EvoComTest.Views.ShopView"
+             x:CompileBindings="False"
+             x:DataType="contentPage:ShopViewModel">
+    <Design.DataContext>
+        <contentPage:ShopViewModel />
+    </Design.DataContext>
+    <Border Margin="0,0,0,0"
+            CornerRadius="5"
+            Background="#b2f2bb"
+            BorderBrush="Black"
+            BorderThickness="2">
+        <ScrollViewer>
+            <ItemsControl ItemsSource="{Binding ShopItems}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border Margin="20"
+                                CornerRadius="5"
+                                BorderBrush="Black"
+                                Background="#ffc9c9"
+                                BorderThickness="2">
+                            <DockPanel>
+                                <Button Content="Купить"
+                                        DockPanel.Dock="Bottom"
+                                        Margin="5"
+                                        Background="#ffc9c9"
+                                        BorderThickness="2"
+                                        BorderBrush="Black"
+                                        HorizontalAlignment="Center"
+                                        Command="{Binding  DataContext.AddItemToCartCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" />
+                                <StackPanel Orientation="Horizontal"
+                                            HorizontalAlignment="Center"
+                                            DockPanel.Dock="Bottom">
+                                    <TextBlock Text="{Binding Label}" />
+                                    <TextBlock Text="{Binding Count, StringFormat=': {0} шт.'}" />
+                                </StackPanel>
+                                <Image Source="{Binding Image^}"
+                                       
+                                       MaxWidth="300"
+                                       HorizontalAlignment="Left"
+                                       DockPanel.Dock="Top"
+                                       Margin="10" />
+                            </DockPanel>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+    </Border>
+</UserControl>
