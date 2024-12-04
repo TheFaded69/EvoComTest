@@ -1,0 +1,47 @@
+﻿{
+  "$type": "System.Collections.ObjectModel.ObservableCollection`1[[EvoComTest.ViewModels.Items.ShopItemModel, EvoComTest]], System.ObjectModel",
+  "$values": [
+    {
+      "$type": "EvoComTest.ViewModels.Items.ShopItemModel, EvoComTest",
+      "UriImage": "https://loremflickr.com/200/200?random\u003d1",
+      "Count": 20,
+      "Label": "Яблоко",
+      "Price": 450.0
+    },
+    {
+      "$type": "EvoComTest.ViewModels.Items.ShopItemModel, EvoComTest",
+      "UriImage": "https://loremflickr.com/200/200?random\u003d2",
+      "Count": 10,
+      "Label": "TEst 2",
+      "Price": 450.0
+    },
+    {
+      "$type": "EvoComTest.ViewModels.Items.ShopItemModel, EvoComTest",
+      "UriImage": "https://loremflickr.com/200/200?random\u003d3",
+      "Count": 30,
+      "Label": "12412412",
+      "Price": 450.0
+    },
+    {
+      "$type": "EvoComTest.ViewModels.Items.ShopItemModel, EvoComTest",
+      "UriImage": "https://loremflickr.com/200/200?random\u003d4",
+      "Count": 40,
+      "Label": "qwerty",
+      "Price": 450.0
+    },
+    {
+      "$type": "EvoComTest.ViewModels.Items.ShopItemModel, EvoComTest",
+      "UriImage": "https://loremflickr.com/200/200?random\u003d5",
+      "Count": 40,
+      "Label": "qwerty",
+      "Price": 450.0
+    },
+    {
+      "$type": "EvoComTest.ViewModels.Items.ShopItemModel, EvoComTest",
+      "UriImage": "https://loremflickr.com/200/200?random\u003d6",
+      "Count": 20,
+      "Label": "Яблоко",
+      "Price": 450.0
+    }
+  ]
+}

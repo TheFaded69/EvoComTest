@@ -3,7 +3,9 @@ using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using EvoComTest.Models.AppService;
 using EvoComTest.Models.HttpService;
+using EvoComTest.Models.HttpService.DTO;
 using EvoComTest.Models.ImageLoader;
 using EvoComTest.ViewModels.Items;
 
@@ -12,16 +14,29 @@ namespace EvoComTest.ViewModels;
 public partial class ShopViewModel : ViewModelBase
 
 {
-    public ShopViewModel(IShopService shopService)
+    private readonly IShopService _shopService;
+    private readonly ICartService _cartService;
+
+    public ShopViewModel(IShopService shopService, ICartService cartService)
     {
-        Task.Run((Func<Task?>)(async () =>
+        _shopService = shopService;
+        _cartService = cartService;
+        
+        Task.Run(async () =>
         {
             var dto =  await shopService.GetShopItemsAsync();
             foreach (var shopItemDto in dto)
             {
-                ShopItems.Add(new ShopItemViewModel(ImageLoader.LoadFromWeb(shopItemDto.UriImage), shopItemDto.Count, shopItemDto.Label, shopItemDto.Price));
+                ShopItems.Add(new ShopItemViewModel
+                {
+                    Image = ImageLoader.LoadFromWeb(shopItemDto.UriImage),
+                    Count = shopItemDto.Count,
+                    Label = shopItemDto.Label,
+                    Price = shopItemDto.Price,
+                    IsAddedToCart = false
+                });
             }
-        }));
+        });
     }
 
     /// <summary>
@@ -42,12 +57,29 @@ public partial class ShopViewModel : ViewModelBase
     };*/
 
     [RelayCommand]
-    private void AddItemToCart()
+    private void AddItemToCart(ShopItemViewModel shopItemViewModel)
     {
+        _cartService.AddCartItemFromShop(new ShopItemDTO
+        {
+            Count = shopItemViewModel.Count,
+            Label = shopItemViewModel.Label,
+            Price = shopItemViewModel.Price
+        });
+
+        shopItemViewModel.IsAddedToCart = true;
     }
 
     [RelayCommand]
-    private void RemoveItemFromCart()
+    private void RemoveItemFromCart(ShopItemViewModel shopItemViewModel)
     {
+        _cartService.RemoveCartItemFromShop(new ShopItemDTO()
+        {
+            Count = shopItemViewModel.Count,
+            Label = shopItemViewModel.Label,
+            Price = shopItemViewModel.Price
+        });
+        
+        shopItemViewModel.IsAddedToCart = false;
+
     }
 }

@@ -8,26 +8,26 @@
              x:Class="EvoComTest.Views.CartView"
              x:DataType="viewModels:CartViewModel">
     <Design.DataContext>
-        <viewModels:CartViewModel/>
+        <viewModels:CartViewModel />
     </Design.DataContext>
     <Border Margin="0,0,0,0"
             CornerRadius="5"
             Background="#b2f2bb"
             BorderBrush="Black"
             BorderThickness="2">
-        <DockPanel LastChildFill="False">
-            <Border Margin="0,0,0,0"
-                    CornerRadius="5"
+        <DockPanel LastChildFill="True">
+            <Border Margin="20"
+                    CornerRadius="15"
                     Background="#ffc9c9"
                     BorderBrush="Black"
                     DockPanel.Dock="Top"
                     HorizontalAlignment="Left"
                     BorderThickness="2">
                 <TextBlock Text="{Binding CartItemsCount, StringFormat='Всего товаров: {0}'}"
-                           Margin="5"/>
+                           Margin="5" />
             </Border>
-            <Border Margin="0,0,0,0"
-                    CornerRadius="5"
+            <Border Margin="20"
+                    CornerRadius="15"
                     Background="#ffc9c9"
                     BorderBrush="Black"
                     DockPanel.Dock="Top"
@@ -35,26 +35,37 @@
                 <DataGrid ItemsSource="{Binding CartItemViewModels}"
                           Margin="5"
                           SelectionMode="Single">
+                    <DataGrid.Styles>
+                        <Style Selector="DataGridColumnHeader">
+                            <Setter Property="Background" Value="#ffc9c9" /> <!-- Задаем фон заголовка -->
+                        </Style>
+                    </DataGrid.Styles>
+                    
                     <DataGrid.Columns>
                         <DataGridTextColumn Binding="{Binding Number}"
                                             Header="#"
-                                            IsReadOnly="True"/>
+                                            IsReadOnly="True" />
                         <DataGridTextColumn Binding="{Binding Name}"
                                             Header="Название"
-                                            IsReadOnly="True"/>
+                                            IsReadOnly="True" />
                         <DataGridTextColumn Binding="{Binding Count}"
-                                            Header="Кол-во"/>
-                        <DataGridTemplateColumn>
+                                            Header="Кол-во" />
+                        <DataGridTemplateColumn Header="Есть в наличии">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <DockPanel>
+                                    <Grid>
                                         <avalonia:SymbolIcon Symbol="Checkmark"
                                                              Foreground="Green"
-                                                             IsVisible="{Binding CanSellItem}"/>
+                                                             HorizontalAlignment="Center"
+                                                             VerticalAlignment="Center"
+                                                             IsVisible="{Binding CanSellItem}" />
                                         <avalonia:SymbolIcon Symbol="Dismiss"
                                                              Foreground="Red"
-                                                             IsVisible="{Binding CanSellItem}"/>
-                                    </DockPanel>
+                                                             HorizontalAlignment="Center"
+                                                             VerticalAlignment="Center"
+                                                             IsVisible="{Binding !CanSellItem}" />
+                                    </Grid>
+
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>

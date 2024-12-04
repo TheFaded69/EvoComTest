@@ -2,11 +2,120 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:EvoComTest.ViewModels"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="EvoComTest.Views.ProfileView">
+             x:Class="EvoComTest.Views.ProfileView"
+             x:DataType="viewModels:ProfileViewModel">
     <Border Margin="0,0,0,0"
             CornerRadius="5"
             Background="#b2f2bb"
             BorderBrush="Black"
-            BorderThickness="2" />
+            BorderThickness="2" >
+        <DockPanel>
+            <StackPanel Orientation="Vertical">
+                <Border Margin="20"
+                        CornerRadius="5"
+                        Width="300"
+                        Height="300"
+                        Background="#ffc9c9"
+                        BorderBrush="Black"
+                        BorderThickness="2" >
+                    
+                </Border>
+                <Border Margin="20"
+                        CornerRadius="5"
+                        Background="#ffc9c9"
+                        BorderBrush="Black"
+                        BorderThickness="2"
+                        HorizontalAlignment="Center">
+                    <StackPanel Orientation="Vertical">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Иван"
+                                       Margin="5"/>
+                            <TextBlock Text="Иванов"
+                                       Margin="5"/>
+                        </StackPanel>
+                        <TextBlock Text="28 лет"
+                                   HorizontalAlignment="Center"
+                                   Margin="5"/>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+            <StackPanel Orientation="Vertical"
+                        DockPanel.Dock="Right">
+                <Border Margin="20"
+                        CornerRadius="5"
+                        Background="#ffc9c9"
+                        BorderBrush="Black"
+                        BorderThickness="2" >
+                    <Grid RowDefinitions="Auto, Auto, Auto"
+                          ColumnDefinitions="0.4*, 0.6*">
+                        <TextBlock Grid.Row="0"
+                                   Grid.Column="0"
+                                   Margin="5"
+                                   Text="Имя:"/>
+                        <TextBlock Grid.Row="1"
+                                   Grid.Column="0"
+                                   Margin="5"
+                                   Text="Фамилия:"/>
+                        <TextBlock Grid.Row="2"
+                                   Grid.Column="0"
+                                   Margin="5"
+                                   Text="Отчество:"/>
+                        <TextBox Grid.Row="0"
+                                 Grid.Column="1"/>
+                        <TextBox Grid.Row="1"
+                                 Grid.Column="1"/>
+                        <TextBox Grid.Row="2"
+                                 Grid.Column="1"/>
+                    </Grid>
+                </Border>
+                <Border Margin="20"
+                        CornerRadius="5"
+                        Background="#ffc9c9"
+                        BorderBrush="Black"
+                        BorderThickness="2" >
+                    <Grid RowDefinitions="Auto, Auto"
+                          ColumnDefinitions="0.4*, 0.6*">
+                        <TextBlock Grid.Row="0"
+                                   Grid.Column="0"
+                                   Margin="5"
+                                   Text="Телефон:"/>
+                        <TextBlock Grid.Row="1"
+                                   Grid.Column="0"
+                                   Margin="5"
+                                   Text="email:"/>
+                        <TextBox Grid.Row="0"
+                                 Text="{Binding PhoneNumber}"
+                                 Grid.Column="1"/>
+                        <TextBox Grid.Row="1"
+                                 Grid.Column="1"
+                                 Text="{Binding Email}"/>
+                    </Grid>
+                </Border>
+                <Border Margin="20"
+                        CornerRadius="5"
+                        Background="#ffc9c9"
+                        BorderBrush="Black"
+                        BorderThickness="2" >
+                    <Grid RowDefinitions="Auto, Auto"
+                          ColumnDefinitions="0.4*, 0.6*">
+                        <TextBlock Grid.Row="0"
+                                   Grid.Column="0"
+                                   Margin="5"
+                                   Text="Возраст:"/>
+                        <TextBlock Grid.Row="1"
+                                   Grid.Column="0"
+                                   Margin="5"
+                                   Text="Баланс:"/>
+                        <TextBox Grid.Row="0"
+                                 Grid.Column="1"/>
+                        <TextBox Grid.Row="1"
+                                 Grid.Column="1"/>
+                    </Grid>
+                </Border>
+            </StackPanel>
+            
+        </DockPanel>
+    </Border>
 </UserControl>

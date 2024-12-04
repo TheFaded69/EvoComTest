@@ -7,4 +7,5 @@ public static class DesignData
 {
     public static readonly IShopService ShopService = new ShopService();
     public static readonly IPageMediator PageMediator = new PageMediator();
+    public static readonly ICartService CartService = new CartService();
 }

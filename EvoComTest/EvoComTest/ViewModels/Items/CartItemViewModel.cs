@@ -8,6 +8,7 @@ public partial class CartItemViewModel : ViewModelBase
     public int Number { get; set; }
     public string Name { get; set; }
 
+    [ObservableProperty]
     private int _maxCount;
     
     [ObservableProperty]
@@ -18,6 +19,6 @@ public partial class CartItemViewModel : ViewModelBase
 
     partial void OnCountChanged(int value)
     {
-        CanSellItem = Count <= _maxCount;
+        CanSellItem = Count <= MaxCount;
     }
 }

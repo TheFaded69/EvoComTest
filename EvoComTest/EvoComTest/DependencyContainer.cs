@@ -34,6 +34,7 @@ internal static class DependencyContainer
 
         services.AddSingleton<IPageMediator, PageMediator>();
         services.AddSingleton<IShopService, ShopService>();
+        services.AddSingleton<ICartService, CartService>();
         
         return services.BuildServiceProvider();
     }

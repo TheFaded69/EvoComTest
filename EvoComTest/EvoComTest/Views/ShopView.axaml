@@ -37,7 +37,19 @@
                                         BorderThickness="2"
                                         BorderBrush="Black"
                                         HorizontalAlignment="Center"
-                                        Command="{Binding  DataContext.AddItemToCartCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" />
+                                        Command="{Binding  DataContext.AddItemToCartCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" 
+                                        CommandParameter="{Binding }"
+                                        IsVisible="{Binding !IsAddedToCart}"/>
+                                <Button Content="Убрать"
+                                        DockPanel.Dock="Bottom"
+                                        Margin="5"
+                                        Background="#ffc9c9"
+                                        BorderThickness="2"
+                                        BorderBrush="Black"
+                                        HorizontalAlignment="Center"
+                                        Command="{Binding  DataContext.RemoveItemFromCartCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                        CommandParameter="{Binding }"
+                                        IsVisible="{Binding IsAddedToCart}"/>
                                 <StackPanel Orientation="Horizontal"
                                             HorizontalAlignment="Center"
                                             DockPanel.Dock="Bottom">

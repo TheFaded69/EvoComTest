@@ -1,4 +1,5 @@
 ﻿using Avalonia.Controls;
+using Avalonia.Input;
 using CommunityToolkit.Mvvm.DependencyInjection;
 using EvoComTest.ViewModels;
 
@@ -11,5 +12,10 @@ public partial class ProfileView : UserControl
         InitializeComponent();
         
         DataContext = Ioc.Default.GetService<ProfileViewModel>();
+    }
+
+    private void InputElement_OnPointerPressed(object? sender, PointerPressedEventArgs e)
+    {
+        
     }
 }
