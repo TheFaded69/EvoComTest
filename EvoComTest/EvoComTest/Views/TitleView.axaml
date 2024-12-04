@@ -5,7 +5,6 @@
              xmlns:viewModels="clr-namespace:EvoComTest.ViewModels"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="EvoComTest.Views.TitleView"
-             xmlns:evoComTest="clr-namespace:EvoComTest"
              x:DataType="viewModels:TitleViewModel">
     <Design.DataContext>
         <viewModels:TitleViewModel />
