@@ -3,7 +3,6 @@ using System.Collections.ObjectModel;
 using System.Net.Http;
 using System.Threading.Tasks;
 using EvoComTest.Models.HttpService.DTO;
-using EvoComTest.ViewModels.Items;
 using Newtonsoft.Json;
 
 namespace EvoComTest.Models.HttpService;

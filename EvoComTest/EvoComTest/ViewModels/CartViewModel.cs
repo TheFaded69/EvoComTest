@@ -1,6 +1,8 @@
 ﻿using System.Collections.ObjectModel;
+using CommunityToolkit.Mvvm.ComponentModel;
+using EvoComTest.ViewModels.Items;
 
-namespace EvoComTest.ViewModels.ContentPage;
+namespace EvoComTest.ViewModels;
 
 public partial class CartViewModel : ViewModelBase
 {
@@ -9,5 +11,7 @@ public partial class CartViewModel : ViewModelBase
         
     }
 
-    //public ObservableCollection<CartItemViewModel> CartItemViewModels { get; } = [];
+    [ObservableProperty] private int _cartItemsCount;
+    
+    public ObservableCollection<CartItemViewModel> CartItemViewModels { get; } = [];
 }

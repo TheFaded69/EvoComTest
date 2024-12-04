@@ -1,4 +1,4 @@
-﻿namespace EvoComTest.ViewModels.ContentPage;
+﻿namespace EvoComTest.ViewModels;
 
 public partial class ProfileViewModel : ViewModelBase
 

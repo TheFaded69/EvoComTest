@@ -1,12 +1,9 @@
-using System;
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
-using Avalonia.Data.Core.Plugins;
 using Avalonia.Markup.Xaml;
 using CommunityToolkit.Mvvm.DependencyInjection;
 using EvoComTest.ViewModels;
 using EvoComTest.Views;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace EvoComTest;
 

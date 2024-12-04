@@ -1,30 +1,27 @@
-﻿using System.Collections.ObjectModel;
-using System.Text.Json;
-using System.Text.Json.Serialization;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using EvoComTest.Models.HttpService;
-using EvoComTest.Models.HttpService.DTO;
 using EvoComTest.Models.ImageLoader;
 using EvoComTest.ViewModels.Items;
-using Newtonsoft.Json;
 
-namespace EvoComTest.ViewModels.ContentPage;
+namespace EvoComTest.ViewModels;
 
 public partial class ShopViewModel : ViewModelBase
 
 {
     public ShopViewModel(IShopService shopService)
     {
-        Task.Run(async () =>
+        Task.Run((Func<Task?>)(async () =>
         {
             var dto =  await shopService.GetShopItemsAsync();
             foreach (var shopItemDto in dto)
             {
                 ShopItems.Add(new ShopItemViewModel(ImageLoader.LoadFromWeb(shopItemDto.UriImage), shopItemDto.Count, shopItemDto.Label, shopItemDto.Price));
             }
-        });
+        }));
     }
 
     /// <summary>

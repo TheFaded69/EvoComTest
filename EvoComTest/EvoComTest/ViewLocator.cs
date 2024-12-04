@@ -5,8 +5,8 @@ using Avalonia.Controls.Templates;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.DependencyInjection;
 using EvoComTest.ViewModels;
-using EvoComTest.ViewModels.ContentPage;
 using EvoComTest.Views;
+using ShopViewModel = EvoComTest.ViewModels.ShopViewModel;
 
 namespace EvoComTest;
 

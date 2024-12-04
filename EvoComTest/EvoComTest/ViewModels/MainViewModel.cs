@@ -1,5 +1,4 @@
-﻿using Avalonia.Controls;
-using CommunityToolkit.Mvvm.ComponentModel;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 using EvoComTest.Models.AppService;
 using EvoComTest.Views;
 

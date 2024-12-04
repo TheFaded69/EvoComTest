@@ -5,7 +5,6 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.DependencyInjection;
 using CommunityToolkit.Mvvm.Input;
 using EvoComTest.Models.AppService;
-using EvoComTest.ViewModels.ContentPage;
 using EvoComTest.ViewModels.Items;
 using EvoComTest.Views;
 

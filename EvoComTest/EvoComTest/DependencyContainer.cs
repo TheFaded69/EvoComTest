@@ -2,9 +2,9 @@
 using EvoComTest.Models.AppService;
 using EvoComTest.Models.HttpService;
 using EvoComTest.ViewModels;
-using EvoComTest.ViewModels.ContentPage;
 using EvoComTest.Views;
 using Microsoft.Extensions.DependencyInjection;
+using ShopViewModel = EvoComTest.ViewModels.ShopViewModel;
 
 namespace EvoComTest;
 

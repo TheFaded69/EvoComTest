@@ -1,8 +1,6 @@
-﻿using Avalonia;
-using Avalonia.Controls;
-using Avalonia.Markup.Xaml;
+﻿using Avalonia.Controls;
 using CommunityToolkit.Mvvm.DependencyInjection;
-using EvoComTest.ViewModels.ContentPage;
+using EvoComTest.ViewModels;
 
 namespace EvoComTest.Views;
 
