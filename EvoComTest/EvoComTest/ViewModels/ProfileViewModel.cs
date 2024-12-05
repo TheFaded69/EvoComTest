@@ -8,7 +8,7 @@ public partial class ProfileViewModel : ViewModelBase
 {
     public ProfileViewModel()
     {
-        
+        //TODO ВМ профиля
     }
 
 

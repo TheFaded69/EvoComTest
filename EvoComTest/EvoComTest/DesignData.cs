@@ -3,6 +3,9 @@ using EvoComTest.Models.HttpService;
 
 namespace EvoComTest.Views;
 
+/// <summary>
+/// Статичные сервисы для работы дизайнера. Используются только в конструкторах по умолчанию без параметров типа ctor()
+/// </summary>
 public static class DesignData
 {
     public static readonly IShopService ShopService = new ShopService();

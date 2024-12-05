@@ -18,11 +18,13 @@ public class ShopService : IShopService
         using var httpClient = new HttpClient();
         try
         {
+            //todo получение данных из testResponse.json с сервера, а не локального. Работает если создать GET запрос в Mockoon
             var data = await httpClient.GetAsync("http://localhost:3000/shop/all");
             data.EnsureSuccessStatusCode();
 
             var str = await data.Content.ReadAsStringAsync();
 
+            
             return JsonConvert.DeserializeObject<ObservableCollection<ShopItemDTO>>(str);
         }
         catch (HttpRequestException ex)

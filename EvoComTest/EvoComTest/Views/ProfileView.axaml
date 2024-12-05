@@ -6,6 +6,7 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="EvoComTest.Views.ProfileView"
              x:DataType="viewModels:ProfileViewModel">
+    <!-- TODO стиль текстбокса чтобы его не было видно и разблокировался правой кнопкой (PointerPressed + IsEnabled = false мб) -->
     <Border Margin="0,0,0,0"
             CornerRadius="5"
             Background="#b2f2bb"
@@ -20,7 +21,7 @@
                         Background="#ffc9c9"
                         BorderBrush="Black"
                         BorderThickness="2" >
-                    
+                    <!-- TODO место под фото -->
                 </Border>
                 <Border Margin="20"
                         CornerRadius="5"

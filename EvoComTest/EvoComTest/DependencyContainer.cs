@@ -14,8 +14,10 @@ internal static class DependencyContainer
     {
         var services = new ServiceCollection();
         
+        //todo все синглтон т.к. удобно хранить состояние вм постоянными как и вью. Можно переделать т.к. данные о корзине хранятся в моделе
         services.AddSingleton<MainViewModel>();
         services.AddSingleton<MainWindowView>();
+        
         
         services.AddSingleton<TitleViewModel>();
         services.AddSingleton<TitleView>();

@@ -27,6 +27,8 @@ public partial class ShopViewModel : ViewModelBase
             var dto =  await shopService.GetShopItemsAsync();
             foreach (var shopItemDto in dto)
             {
+                //todo добавить маппинг
+                
                 ShopItems.Add(new ShopItemViewModel
                 {
                     Image = ImageLoader.LoadFromWeb(shopItemDto.UriImage),

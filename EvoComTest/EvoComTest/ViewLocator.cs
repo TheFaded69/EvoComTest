@@ -41,6 +41,11 @@ public class ViewLocator : IDataTemplate
         return data is ObservableObject;
     }
 
+    /// <summary>
+    /// Получение формы из контейнера, а не по контракту названий
+    /// </summary>
+    /// <typeparam name="TViewModel"></typeparam>
+    /// <typeparam name="TView"></typeparam>
     private void RegisterViewFactory<TViewModel, TView>()
         where TViewModel : class
         where TView : Control
